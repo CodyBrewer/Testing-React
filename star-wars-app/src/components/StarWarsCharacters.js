@@ -37,6 +37,7 @@ export default function StarWarsCharacters() {
     <div>
       {isLoading ? (
         <Loader
+          data-testid="loader"
           type="ThreeDots"
           color="#FFC402"
           height={30}
