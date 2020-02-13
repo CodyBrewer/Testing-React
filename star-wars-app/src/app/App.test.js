@@ -20,4 +20,11 @@ describe("App", () => {
     const header = within(div).getByTestId("App-header");
     expect(header).toBeInTheDocument();
   });
+  test("should render logo img within header", () => {
+    const { getByTestId, getByAltText } = render(<App />);
+    const div = getByTestId("App-div");
+    const header = within(div).getByTestId("App-header");
+    const logoImage = within(header).getByAltText("logo");
+    expect(logoImage).toBeInTheDocument();
+  });
 });
