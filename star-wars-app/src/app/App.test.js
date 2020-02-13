@@ -11,7 +11,13 @@ describe("App", () => {
   });
   test("should have div with className of app", () => {
     const { getByTestId } = render(<App />);
-    const appDiv = getByTestId("App-div");
-    expect(appDiv).toHaveClass("App");
+    const div = getByTestId("App-div");
+    expect(div).toHaveClass("App");
+  });
+  test("should render header within div", () => {
+    const { getByTestId } = render(<App />);
+    const div = getByTestId("App-div");
+    const header = within(div).getByTestId("App-header");
+    expect(header).toBeInTheDocument();
   });
 });
