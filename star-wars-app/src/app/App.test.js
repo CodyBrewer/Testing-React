@@ -6,7 +6,12 @@ import App from "./App";
 afterEach(cleanup);
 
 describe("App", () => {
-  test("should render without crashing", () => {
+  test("should render without crashingq", () => {
     render(<App />);
+  });
+  test("should have div with className of app", () => {
+    const { getByTestId } = render(<App />);
+    const appDiv = getByTestId("App-div");
+    expect(appDiv).toHaveClass("App");
   });
 });
